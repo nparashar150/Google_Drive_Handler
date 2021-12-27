@@ -26,9 +26,9 @@ const drive = google.drive({
   version: "v3",
   auth: oauth2Client,
 });
-const FILENAME = "__Enter_your_fileName_here__";
-const Dirpath = path.join(__dirname , FILENAME);
-const uploadFile = async () => {
+// const FILENAME = "__Enter_your_fileName_here__";
+const uploadFile = async (FILENAME) => {
+  const Dirpath = path.join(__dirname , FILENAME);
   try {
     const response = await drive.files.create({
       requestBody: {
