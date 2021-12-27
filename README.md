@@ -27,11 +27,10 @@
    |  | REFRESH_TOKEN |   | yourRefreshToken |
    
 12. Place your file at the dir
-13. Replace FILENAME with your files' name inside the script [eg](https://github.com/nparashar150/Google_Drive_Handler/blob/383fb4dd07f8dcf6c39d040a576fa626d8aa5854/googleDriveHandler.js#L29)
-14. Install required packages
-15. **Note**: To upload the file run yarn upload "fileName"
-16. **Note**: To delete the file you need the files' FILEID as pass it as yarn delete 'FILEID'
+13. Install required packages
+14. **Note**: To upload the file run yarn upload "fileName"
+15. **Note**: To delete the file you need the files' FILEID and run it as yarn delete 'FILEID'
 ![Example_Code](https://raw.githubusercontent.com/nparashar150/Google_Drive_Handler/main/assets/Example_Code.png)
-17. Once you are done the setup you only need to run follow Steps after Step 11 everytime.
+16. Once you are done the setup you only need to run follow Steps after Step 11 everytime.
 
 #### Star the Repository if you like my work
