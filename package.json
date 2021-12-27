@@ -1,0 +1,22 @@
+{
+  "name": "google-api",
+  "maintainers": ["Naman Parashar"],
+  "author": {
+    "name": "Naman Parashar",
+    "email": "nparashar150@gmail.com",
+    "url": "https://nparashar150.com"
+  },
+  "version": "1.0.0",
+  "main": "googleDriveHandler.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "global": "^4.4.0",
+    "googleapis": "^92.0.0",
+    "run-func": "^1.0.5"
+  },
+  "scripts": {
+    "upload": "yarn run-func googleDriveHandler.js uploadFile",
+    "delete": "yarn run-func googleDriveHandler.js deleteFile"
+  }
+}
