@@ -28,7 +28,7 @@
    
 12. Place your file at the dir
 13. Install required packages
-14. **Note**: To upload the file run yarn upload "fileName" "mimeType"
+14. **Note**: To upload the file run yarn upload "fileName" "mimeType" "folderId (if you want to upload inside a folder)"
 15. **Note**: To delete the file you need the files' FILEID and run it as yarn delete 'FILEID'
 16. **Note**: To create a folder you need to run yarn createFolder 'folderName'
 ![Example_Code](https://raw.githubusercontent.com/nparashar150/Google_Drive_Handler/main/assets/Example_Code.png)
