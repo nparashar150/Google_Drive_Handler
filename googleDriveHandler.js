@@ -3,11 +3,6 @@ require("dotenv").config();
 const { google } = require("googleapis");
 const fs = require("fs");
 const path = require("path");
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -26,17 +21,19 @@ const drive = google.drive({
   version: "v3",
   auth: oauth2Client,
 });
+
 // const FILENAME = "__Enter_your_fileName_here__";
-const uploadFile = async (FILENAME) => {
-  const Dirpath = path.join(__dirname , FILENAME);
+const uploadFile = async (FILENAME, mimeType, parentFolderId) => {
+  const Dirpath = path.join(__dirname, FILENAME);
   try {
     const response = await drive.files.create({
       requestBody: {
         name: `${Date.now() + FILENAME}`,
-        mimeType: "image/jpg",
+        mimeType: mimeType,
+        parents: [parentFolderId],
       },
       media: {
-        mimeType: "image/jpg",
+        mimeType: mimeType,
         body: fs.createReadStream(Dirpath),
       },
     });
@@ -78,4 +75,20 @@ const deleteFile = async (fileId) => {
   }
 };
 
-module.exports = { uploadFile, generatePublicUrl, deleteFile };
+const createFolder = async (folderName) => {
+  try {
+    const folderMetadata = {
+      name: folderName,
+      mimeType: "application/vnd.google-apps.folder",
+    };
+    const response = await drive.files.create({
+      resource: folderMetadata,
+      fields: "id",
+    });
+    console.log(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { uploadFile, generatePublicUrl, deleteFile, createFolder };

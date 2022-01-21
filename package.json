@@ -1,6 +1,8 @@
 {
   "name": "google-api",
-  "maintainers": ["Naman Parashar"],
+  "maintainers": [
+    "Naman Parashar"
+  ],
   "author": {
     "name": "Naman Parashar",
     "email": "nparashar150@gmail.com",
@@ -17,6 +19,7 @@
   },
   "scripts": {
     "upload": "yarn run-func googleDriveHandler.js uploadFile",
-    "delete": "yarn run-func googleDriveHandler.js deleteFile"
+    "delete": "yarn run-func googleDriveHandler.js deleteFile",
+    "createFolder": "yarn run-func googleDriveHandler.js createFolder"
   }
 }
